@@ -35,10 +35,9 @@ $$ W_i(x,t) = w_i(x) H(x-a(t)) $$
 
 The weak form of the wave equation with this discretization can be written as 
 
-
 $$ \int_0^L \frac{\partial^2 u}{\partial t^2} W_j dx + \int_0^L \frac{\partial u}{\partial x}\frac{\partial W_j}{\partial x} dx = 0 $$ 
 
-Plugging in the displacement discretization, we have
+Note that we have to be more careful taking spatial derivatives of the shape functions $W_j(x,t)$ because their spatial dependence comes both from the underlying basis set $w_i(x)$ and the Heaviside step function. This also suggests that we need to regularize the step functions otherwise there would be infinite derivatives at the position of the step. The step functions can be smoothly approximated using hyperbolic tangents. Plugging in the displacement discretization, we have
 
 $$ \sum_i \ddot a_i \Big( \int_0^L W_i(x,t) W_j(x,t) dx\Big) + \sum_i a_i \Big( \frac{\partial W_i}{\partial x} \frac{\partial W_j}{\partial x} \Big) = 0
 
@@ -54,5 +53,13 @@ The time updating scheme for the displacement degrees of freedom is then
 
 $$ a(t+1) = -\Delta t^2 M^{-1}(t) K(t) a(t) + 2a(t) - a(t-1) $$
 
-The stiffness and mass matrices are evaluated at the current time.
+The stiffness and mass matrices are evaluated at the current time. This method is implemented in the attached code. Note that when reconstructing the solution the degrees of freedom need to be matched with their shape functions at a correspond time. This is because the basis changes with time. It is not clear whether this is "allowed." The results of this method indicate that either that it is difficult to have intuition for a problem of this sort, or that the method is extremely unstable. One thing that we can check is the total energy of the solution with time. Given that we are modeling free vibrations, there does not seem to be any energy input into the system even though the domain expands. Thus, the total energy of the solution should remain constant. The total energy at a given time is the sum of the strain energy and then kinetic energy, namely
+
+
+$$ U(t) = \int_0^L \frac{1}{2}\Big( \frac{\partial u}{\partial t} \Big)^2 + \frac{1}{2} \Big( \frac{\partial u}{\partial x} \Big)^2 dx = T + V $$
+
+
+The strain energy for the discrete solution can be written simply as
+
+$$ V = \frac{1}{2} a_i K_{ij} a_j $$
 
