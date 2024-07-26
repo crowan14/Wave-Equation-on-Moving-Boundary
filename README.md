@@ -50,3 +50,9 @@ We can time integrate this system with a forward Euler scheme. This reads
 
 $$ M_{ij}(t) \Big( \frac{a_j(t+1) - 2a_j(t) + a_j(t-1)}{\Delta t^2}\Big) + K_{ij} a_j(t) = 0 $$
 
+The time updating scheme for the displacement degrees of freedom is then
+
+$$ a(t+1) = -\Delta t^2 M^{-1}(t) K(t) a(t) + 2a(t) - a(t-1) $$
+
+The stiffness and mass matrices are evaluated at the current time.
+
