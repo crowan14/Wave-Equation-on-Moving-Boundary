@@ -38,3 +38,15 @@ The weak form of the wave equation with this discretization can be written as
 
 $$ \int_0^L \frac{\partial^2 u}{\partial t^2} W_j dx + \int_0^L \frac{\partial u}{\partial x}\frac{\partial W_j}{\partial x} dx = 0 $$ 
 
+Plugging in the displacement discretization, we have
+
+$$ \sum_i \ddot a_i \Big( \int_0^L W_i(x,t) W_j(x,t) dx\Big) + \sum_i a_i \Big( \frac{\partial W_i}{\partial x} \frac{\partial W_j}{\partial x} \Big) = 0
+
+This shows that the mass and stiffness matrices are time-dependent quantities as a result of the time-varying step functions multiplying basis functions. The governing system of ODE's is then
+
+$$ M_{ij}(t) \ddot a_j(t) + K_{ij}(t) a_j(t) = 0 $$
+
+We can time integrate this system with a forward Euler scheme. This reads
+
+$$ M_{ij}(t) \Big( \frac{a_j(t+1) - 2a_j(t) + a_j(t-1)}{\Delta t^2}\Big) + K_{ij} a_j(t) = 0 $$
+
