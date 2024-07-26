@@ -39,7 +39,7 @@ $$ \int_0^L \frac{\partial^2 u}{\partial t^2} W_j dx + \int_0^L \frac{\partial u
 
 Note that we have to be more careful taking spatial derivatives of the shape functions $W_j(x,t)$ because their spatial dependence comes both from the underlying basis set $w_i(x)$ and the Heaviside step function. This also suggests that we need to regularize the step functions otherwise there would be infinite derivatives at the position of the step. The step functions can be smoothly approximated using hyperbolic tangents. Plugging in the displacement discretization, we have
 
-$$ \sum_i \ddot a_i \Big( \int_0^L W_i(x,t) W_j(x,t) dx\Big) + \sum_i a_i \Big( \frac{\partial W_i}{\partial x} \frac{\partial W_j}{\partial x} \Big) = 0 $$
+$$ \sum_i \ddot a_i \Big( \int_0^L W_i(x,t) W_j(x,t) dx\Big) + \sum_i a_i \Big( \int_0^L\frac{\partial W_i}{\partial x} \frac{\partial W_j}{\partial x} dx \Big) = 0 $$
 
 This shows that the mass and stiffness matrices are time-dependent quantities as a result of the time-varying step functions multiplying basis functions. The governing system of ODE's is then
 
