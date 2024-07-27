@@ -74,6 +74,7 @@ $$ T^1_{ij} = \int_0^L W_i \dot W_j dx, \quad T^2_{ij} = \int_0^L \dot W_i \dot 
 
 Knowing how to compute the strain and kinetic energy of the solution, we can plot the total energy of the motion as a function of time.
 
+Running the code demonstrates that the energy is not conserved. The growth in the oscillations seems too extreme to make physical sense. What is going on here? Maybe you, dear reader, can figure this out and let me know.
 
 
 
