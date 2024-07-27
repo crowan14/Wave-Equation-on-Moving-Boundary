@@ -29,7 +29,7 @@ Our way of simulating this problem is a (potentially sketchy) appeal to intuitio
 
 $$ u(x,t) = \sum_i a_i(t) w_i(x) H(x-a(t)) $$
 
-where $H(x-a(t))$ is a Heaviside step function is zero for $x\leq a(t)$ and 1 for $x\geq a(t) $. This discretization ensures that only the part of the string exposed by the moving clamp has a non-zero contribution from the shape functions. Note that this means the shape functions discretizing the displacement change in time, which is a departure from usual discretization techniques. No problem! We can naively soldier on and see what happens. We have to be a bit more careful in constructing the weak form because the space and time components of the solution are no longer decoupled. For ease of notation, we will introduce the following convention:
+where $H(x-a(t))$ is a Heaviside step function which is zero for $x\leq a(t)$ and 1 for $x\geq a(t) $. This discretization ensures that only the part of the string exposed by the moving clamp has a non-zero contribution from the shape functions. Note that this means the shape functions discretizing the displacement change in time, which is a departure from usual discretization techniques. No problem! We can naively soldier on and see what happens. We have to be a bit more careful in constructing the weak form because the space and time components of the solution are no longer decoupled. For ease of notation, we will introduce the following convention:
 
 $$ W_i(x,t) = w_i(x) H(x-a(t)) $$
 
