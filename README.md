@@ -63,3 +63,7 @@ The strain energy for the discrete solution can be written simply as
 
 $$ V = \frac{1}{2} a_i K_{ij} a_j $$
 
+Given that both the coefficients and the shape functions depend on time, the kinetic energy requires a bit more caution to sort out. We have that
+
+$$ T = \int_0^L \frac{\partial}{\partial t}\Big( \sum_i a_i(t) W_i(x,t)\Big) \frac{\partial}{\partial t} \Big( \sum_j a_j(t) W_j(x,t) \Big) dx $$
+
