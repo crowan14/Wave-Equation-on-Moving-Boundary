@@ -13,7 +13,7 @@ For Galerkin methods, the weak form of the PDE is then obtained by integrating a
 
 $$ \int_a^b \frac{\partial^2 u}{\partial t^2} w_j dx = \int_a^b \frac{\partial^2 u}{\partial x^2} w_j dx $$
 
-This discretization of the displacement is substituted, integration by parts is used to transfer a spatial derivative from the solution to the test function, and we obtain the following system of ordinary differential equations:
+This discretization of the displacement is substituted, integration by parts is used to transfer a spatial derivative from the solution to the test function, and we obtain the following system of ordinary differential equations for free vibration:
 
 $$ M_{ij} \ddot a_j + K_{ij} a_j = 0 $$
 
