@@ -70,5 +70,15 @@ $$ T = \int_0^L \frac{\partial}{\partial t}\Big( \sum_i a_i(t) W_i(x,t)\Big) \fr
 Passing the time derivatives inside the sum, using the product rule, and expanding we obtain
 
 $$ T = \frac{1}{2}\dot a_i \dot a_j M_{ij} + \dot a_i a_j T^1_{ij} + \frac{1}{2} a_i a_i T^2_{ij} $$
+
 $$ T^1_{ij} = \int_0^L W_i \dot W_j dx, \quad T^2_{ij} = \int_0^L \dot W_i \dot W_j dx $$
+
+Knowing how to compute the strain and kinetic energy of the solution, we can plot the total energy of the motion as a function of time.
+
+
+
+
+
+
+
 
