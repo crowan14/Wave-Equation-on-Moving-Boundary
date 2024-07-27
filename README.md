@@ -17,7 +17,7 @@ This discretization of the displacement is substituted, integration by parts is 
 
 $$ M_{ij} \ddot a_j + K_{ij} a_j = 0 $$
 
-Once one has gone through this process many times, it is very formulaic. So far so good. We can now ask a seemingly innocent question: what if the domain on which the PDE is solved changes with time? For example, imagine the vibrations of a string where a clamp (which zeros the displacement) is slid along the string's length. This effectively changes the length of the domain while the string is vibrating. This is not a traditional problem in PDE's, and is a bit tough to think about. This is a first pass at making sense of this problem. It is interesting that a seemingly valid physical scenario seems to so clearly fall outside the purview of traditional PDEs. 
+Once one has gone through this process many times, it is very formulaic. So far so good. We can now ask a seemingly innocent question: what if the domain on which the PDE is solved changes with time? For example, imagine the vibrations of a string where a clamp (which zeros the displacement) is slid along the string's length. This effectively changes the length of the domain while the string is vibrating. This is not a traditional problem in PDE's, and is a bit tough to think about. The following derivation and code is a first pass at making sense of this problem. It is interesting that a seemingly valid physical scenario seems to so clearly fall outside the purview of traditional PDE's. 
 
 The moving domain problem can be written as
 
